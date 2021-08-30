@@ -1,11 +1,14 @@
 {
-  "name": "social-images",
+  "name": "social-image",
   "version": "1.0.0",
   "description": "Open Graph Image Service that runs on deta.sh",
   "main": "index.js",
   "scripts": {
+    "watch": "tsc -p tsconfig.json --watch",
+    "dev": "node demo.js",
     "build": "tsc -p tsconfig.json",
-    "deploy": "npm run build && deta deploy"
+    "predeploy": "npm run build",
+    "deploy": "deta deploy"
   },
   "repository": {
     "type": "git",
@@ -13,8 +16,7 @@
   },
   "keywords": [
     "open-graph",
-    "social-share",
-    "social-images",
+    "social-image",
     "twitter-card",
     "og:image"
   ],
@@ -28,11 +30,12 @@
     "chrome-aws-lambda": "^10.1.0",
     "eta": "^1.12.3",
     "fastify": "^3.20.2",
-    "puppeteer-core": "^10.2.0"
+    "puppeteer-core": "10.1.0"
   },
   "devDependencies": {
     "@tsconfig/node12": "^1.0.9",
     "@types/node": "^16.7.5",
+    "puppeteer": "^10.2.0",
     "typescript": "^4.4.2"
   }
 }
