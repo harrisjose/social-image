@@ -17,5 +17,5 @@ export async function getHtml(data: object) {
 }
 
 export async function getFallback() {
-  await fs.readFile(`public/default.jpeg`)
+  return await fs.readFile(`public/default.png`)
 }

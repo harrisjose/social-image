@@ -1,4 +1,4 @@
-# Open graph image service that runs on deta.sh
+# WIP: Open graph image service that runs on deta.sh
 
 [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy)
 
