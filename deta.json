@@ -1,0 +1,12 @@
+{
+  "name": "Social Image Generator",
+  "description": "OG and Twitter Image Service that runs on deta.sh",
+  "env": [
+    {
+      "key": "BINARY_CONTENT_TYPES",
+      "description": "Required to make serverless-http and api-gateway play nice with binary content like images",
+      "value": "image/*",
+      "required": true
+    }
+  ]
+}

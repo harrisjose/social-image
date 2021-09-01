@@ -1,4 +1,4 @@
-# WIP: Open graph image service that runs on deta.sh
+# Open graph image service that runs on deta.sh
 
 [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy)
 
@@ -30,7 +30,7 @@ You'll want to fork this repository and deploy your own image generator.
 
 1. Click the fork button at the top right of this page
 2. Clone the forked repo to your local machine
-3. Customize the html template in public/index.html
+3. [Customize](#Customizing-the-image) the html template in public/index.html
 4. Push your changes
 5. Use the `Deploy to Deta` button to deploy the micro into your project
 6. (Optional) Put your micro behind cloudflare and configure caching
@@ -44,6 +44,8 @@ npm run demo
 ```
 
 To customize, change the code in `public/index.html`. Query params in the URL are directly used to replace placeholders in the html file using [ETA](https://eta.js.org/).
+
+You'll also want to have a fallback image in case something breaks. Replace the file at `public/default.png` with your own.
 
 ## Credits
 
