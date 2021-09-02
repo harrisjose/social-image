@@ -22,7 +22,10 @@ server.get('/', async (request, response) => {
     image = await getFallback()
   }
 
-  response.type('png').end(image)
+  response
+    .set('Cache-Control', 'public, max-age=604800, immutable')
+    .type('png')
+    .end(image)
 })
 
 export = server
