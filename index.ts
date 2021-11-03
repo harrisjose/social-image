@@ -1,8 +1,27 @@
 import express from 'express'
 import { getImage } from './lib/chrome'
-import { getHtml, getFallback } from './lib/template'
+import { getLayout, getError, getFallback } from './lib/template'
 
 const server = express()
+
+server.get('/preview', async (request, response) => {
+  const { query } = request
+  let html
+
+  try {
+    html = await getLayout({
+      title: 'This is the post title',
+      description:
+        'This is the post description in a smaller font with more pointless text added to make it wrap',
+      ...query,
+    })
+  } catch (error) {
+    console.error(error)
+    html = await getError()
+  }
+
+  response.setHeader('content-type', 'text/html').end(html)
+})
 
 server.get('/', async (request, response) => {
   const { query } = request
@@ -10,7 +29,7 @@ server.get('/', async (request, response) => {
   let image
 
   try {
-    const html = await getHtml(query)
+    const html = await getLayout(query)
 
     image = await getImage(html, 'png')
 

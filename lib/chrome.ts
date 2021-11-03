@@ -17,7 +17,7 @@ export async function getImage(html: string, type: FileType) {
 
     const page = await browser.newPage()
 
-    await page.setViewport({ width: 2048, height: 1024 })
+    await page.setViewport({ width: 1200, height: 600 })
     await page.setContent(html)
 
     file = await page.screenshot({ type })

@@ -64,5 +64,6 @@ typings/
 
 #output files
 index.js
+server.js
 lib/*.js
 
