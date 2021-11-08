@@ -59,9 +59,6 @@ typings/
 .env.test
 .env.local
 
-#deta
-.deta/
-
 #output files
 index.js
 server.js
